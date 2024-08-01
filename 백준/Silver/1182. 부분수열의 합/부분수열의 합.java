@@ -15,6 +15,7 @@ public class Main{
             }
             return;
         }
+
         
         dfs(index + 1, sum + seq[index]);
         dfs(index + 1, sum);
