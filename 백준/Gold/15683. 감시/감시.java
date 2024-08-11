@@ -126,15 +126,16 @@ public class Main {
     public static void watch(CCTV cctv, int d) {//d는 바라보는 4방향
     	Queue<CCTV> queue = new LinkedList<>();
     	//이 코드에선 visited가 필요없지만, 추후 추가 기능에서 유용함.
-    	boolean[][] visited = new boolean[N][M];	//visited의 존재이유가 뭐지?
+    	//boolean[][] visited = new boolean[N][M];	//visited의 존재이유가 뭐지?
     	
     	queue.add(cctv);	//cctv에는 cctv 숫자가 들어있음 1~5중에
-    	visited[cctv.x][cctv.y]= true; 
+    	//visited[cctv.x][cctv.y]= true; 
     	
     	while(!queue.isEmpty()) {
     		//peek는 주고 제거 안함	//그럼 peek는 쓰면안되는거 아님?
     		int nx = queue.peek().x + dx[d];	//peek와 poll을 쓰면, 1칸 이동한 다음 /  다음 queue로 넘어가는겨?
     		//poll은 주고 제거함.
+    		//poll().y만 해도 y를 포함한 그 cctv객체 하나가 통째로 사라짐
     		int ny = queue.poll().y + dy[d];
     		
     		if ( nx < 0 || nx >= N || ny < 0 || ny >= M || copyMap[nx][ny] == 6) {
