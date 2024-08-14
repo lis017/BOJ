@@ -1,3 +1,5 @@
+//왜 풀어서 올라가도, 잔디가 안채워지지?
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
