@@ -120,10 +120,10 @@ public class Main {
 	// BFS로 방향에 맞게 감시 
 	public static void watch(CCTV cctv, int d) {
 		Queue<CCTV> queue = new LinkedList<>();
-		boolean[][] visited = new boolean[N][M];
+		//boolean[][] visited = new boolean[N][M];	//이거 이 코드에선 사용 안됨. 나중엔 아주 좋은 초석
 
 		queue.add(cctv);
-		visited[cctv.x][cctv.y] = true;
+		//visited[cctv.x][cctv.y] = true;
 
 		while(!queue.isEmpty()) {
 			int nx = queue.peek().x + dx[d];
