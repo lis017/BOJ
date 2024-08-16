@@ -6,7 +6,10 @@ import java.util.LinkedList;
 public class Main{
 	public static int N, M;
 	public static ArrayList<CCTV> cctvList;
-	public static int answer = Integer.MAX_VALUE;
+	//와 이거구나. 이거 대체 왜 최댓값 넣는지 이해 안됐었는데
+	//기본값이 0이라, 최솟값이 항상 0 나오기 떄문이구나. 오케이
+	//그럼 최솟값 구하는 문제등에선, 기본값을 맥스로 두는게 정배겠구나. 오오
+	public static int answer = Integer.MAX_VALUE;	
 	public static int[][] map;
 	public static int[][] copyMap;
 	public static int[] output;
