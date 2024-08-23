@@ -1,0 +1,61 @@
+//혹시라도 내가 모르는 문제가 있을가봐 억울함에, 내가 썼던 코드를 적어보겠다.
+//물론 함수명이나 형식이 자꾸 틀려서 거의 베끼듯이 바뀌게 되긴 했다.
+
+package practicePc;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+	public static int[] seq;
+	//int배열을 쓰면 기본값0이 풀이에서 문제생기므로, integer배열의 기본값 null을 사용한다.
+	public static Integer[] dp;	
+	
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		//N 입력 성공
+		int N = Integer.parseInt(br.readLine());
+		seq = new int[N];
+		dp = new Integer[N];
+		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+		
+		//A 입력 성공
+		for ( int i = 0; i < N; i++) {
+			seq[i] = Integer.parseInt(st.nextToken());
+		}
+		
+		//증가수열 dp[] 채우기
+		for ( int i = 0; i < N; i++) {
+			LIS(i);
+		}
+		
+		int max = dp[0];
+		
+		for ( int i = 1; i < N; i++) {
+			max = Math.max(max, dp[i]);
+		}
+		
+		System.out.println(max);
+	}
+	
+	//증가수열
+	//반환이 int인 이유는, 
+	static int LIS(int N) {
+		if ( dp[N] == null)
+			dp[N] = 1;
+		
+		for ( int i = N-1; i >= 0; i--) {
+			if ( seq[i] < seq[N]) {
+				dp[N] = Math.max(dp[N], LIS(i) + 1);
+			}
+		}
+		
+		return dp[N];
+	}
+	
+	//감소수열
+	
+	//두 수열 수 합치는 함수?
+}
