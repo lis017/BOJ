@@ -12,8 +12,8 @@ class Solution {
             return Math.max(sticker[0], sticker[1]);
         }
         
-        int[] dp1 = new int[n];
-        int[] dp2 = new int[n+1];
+        int[] dp1 = new int[n-1];
+        int[] dp2 = new int[n];
         
         dp1[0] = sticker[0];
         dp1[1] = Math.max(sticker[0], sticker[1]);
